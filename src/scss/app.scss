@@ -15,7 +15,7 @@ p {
 }
 .background-img {
   background-image: url(../assets/images/background1.png);
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 header {
@@ -54,41 +54,37 @@ header {
     }
   }
 }
-.main {
-  position: relative;
-  .main-wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-top: 275px;
-    margin-bottom: 172px;
 
-    h1 {
-      color: $or;
-      @include font(156px, 900);
-      margin-bottom: 30px;
-      max-width: 800px;
-      transform: translateX(180px);
-      text-indent: -2em;
-    }
-    p {
-      color: $or;
-      @include font(18px, 500);
-      margin-bottom: 38px;
-    }
-    .main-link {
-      background-color: $or;
-      border-radius: 50px;
-      cursor: pointer;
-      text-decoration: none;
-      text {
-        @include font(14px, 500);
-        text-align: center;
-        color: $bl;
-        display: block;
-        margin: 14px 37px;
-      }
+.main-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 275px;
+  h1 {
+    color: $or;
+    @include font(156px, 900);
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-indent: -2em;
+    text-align: center;
+  }
+  p {
+    color: $or;
+    @include font(18px, 500);
+    margin-bottom: 38px;
+  }
+  .main-link {
+    background-color: $or;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    h2 {
+      @include font(14px, 500);
+      color: $bl;
+      display: block;
+      text-align: center;
+      margin: 14px 37px;
     }
   }
 }
@@ -96,6 +92,7 @@ header {
 footer {
   background-color: $black;
   padding: 80px 0;
+  transform: translateY(172px);
   .footer-parent1,
   .footer-parent2 {
     display: flex;
@@ -197,8 +194,8 @@ footer {
   }
   .background-img {
     background-image: url(../assets/images/background2.png);
-    background-size:cover;
     background-repeat: no-repeat;
+    background-size: contain;
   }
   .header-wrapper {
     height: 54px;
@@ -229,4 +226,126 @@ footer {
     //   }
     // }
   }
+
+  .main-wrapper {
+    h1 {
+      @include font(104px, 900);
+      max-width: 556px;
+      text-indent: 0;
+    }
+    p {
+      @include font(18px, 500);
+      text-align: center;
+      max-width: 373px;
+    }
+  }
+  footer {
+    padding: 50px 0;
+    .footer-parent1,
+    .footer-parent2 {
+      max-width: $medium-width;
+    }
+    .footer-parent1 {
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+    .footer-child1 {
+      flex-direction: column;
+      .footer-child1__elem1 {
+        margin-bottom: 50px;
+      }
+      .footer-child1__elem2 {
+        justify-content: space-between;
+        margin-left: 0;
+        margin-bottom: 100px;
+      }
+    }
+    .footer-child2 {
+      .social-button {
+        margin-top: 0;
+        margin-right: 15px;
+        height: 44px;
+        width: 44px;
+        .icon {
+          margin-top: 11px;
+        }
+      }
+    }
+  }
 }
+@media (max-width: $small-query) {
+  .background-img {
+    background-image: url(../assets/images/background3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .header-wrapper {
+    height: 54px;
+    max-width: $small-width;
+    // ul {
+    //   display: flex;
+    //   padding: 0;
+    //   @include font(16px, 400);
+    //   .vertical-line {
+    //     width: 5px;
+    //     border-left: 1px solid $white;
+    //     height: 16px;
+    //     margin-right: 32px;
+    //   }
+    //   li {
+    //     margin-right: 32px;
+    //     list-style: none;
+    //     &:last-child {
+    //       margin-right: 0;
+    //     }
+    //     a {
+    //       color: $white;
+    //       text-decoration: none;
+    //       &:hover {
+    //         color: $or;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  .main-wrapper {
+    h1 {
+      @include font(48px, 900);
+      max-width: 312px;
+    }
+  }
+  footer {
+    padding: 50px 0;
+    transform: translateY(306px);
+    .footer-parent1,
+    .footer-parent2 {
+      max-width: $small-width;
+    }
+    .footer-child1 {
+      flex-direction: column;
+      .footer-child1__elem2 {
+        div {
+          margin-bottom: 52px;
+        }
+        flex-direction: column;
+      }
+    }
+    .footer-parent2 {
+      ul {
+        flex-wrap: wrap;
+        li {
+          a {
+            line-height: 25px;
+            margin-right: 15px;
+          }
+        }
+      }
+      p {
+        line-height: 25px;
+      }
+    }
+  }
+}
+

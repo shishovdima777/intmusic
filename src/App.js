@@ -4,6 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 
+
 function App() {
   return (
     <div className="background-img">
@@ -40,7 +41,7 @@ function App() {
             <p>Millions of songs and podcasts. No credit card needed.</p>
           </div>
           <a href="#" className="main-link">
-            <text>GET INTMUSIC FREE</text>
+            <h2>GET INTMUSIC FREE</h2>
           </a>
         </div>
       </div>
