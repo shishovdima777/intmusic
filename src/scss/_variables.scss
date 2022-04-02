@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+
+@mixin font($fs, $fw) {
+    font-family: Roboto, monospace, Arial;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+// colors
+$black: black;
+$white: #FFFFFF;
+$bl: #2941AB;
+$or: #FF5500;
+$gr:#919496;
+$gr2: #222326;
+// sreen-width
+$full-width: 1141px;
+$medium-width: 751px;
+
+// query width
+$medium-query: 991px;
+$small-query: 479px;
