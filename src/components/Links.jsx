@@ -1,17 +1,11 @@
-
-function Links(items) {
-    console.log(items)
+function Links({ items }) {
   return (
     <ul>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Jobs</a>
-      </li>
-      <li>
-        <a href="#">For the record</a>
-      </li>
+      {items.map((item, index) => (
+        <li key={`${item}_${index}`}>
+          <a href={item.href}>{item.value}</a>
+        </li>
+      ))}
     </ul>
   );
 }

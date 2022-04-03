@@ -1,5 +1,7 @@
 import Links from './Links';
+import Burger from './Burger';
 
 export {
-    Links
+    Links,
+    Burger
 };

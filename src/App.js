@@ -6,6 +6,25 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import { Links } from "./components";
 
 function App() {
+  const companyLinks = [
+    { value: "About", href: "/about" },
+    { value: "About", href: "/about" },
+    { value: "Jobs", href: "/jobs" },
+    { value: "For the record", href: "/fortherecord" },
+  ];
+  const communityLinks = [
+    { value: "For Artists", href: "/forartists" },
+    { value: "Developers", href: "/developers" },
+    { value: "Advertising", href: "/advertising" },
+    { value: "Inventors", href: "/inventors" },
+    { value: "Vendors", href: "/vendors" },
+  ];
+  const usfulLinks = [
+    { value: "Support", href: "/support" },
+    { value: "Web Player", href: "/webplayer" },
+    { value: "Free Mobil App", href: "/freemobilapp" },
+  ];
+
   return (
     <div className="background-img">
       <header>
@@ -54,41 +73,15 @@ function App() {
             <div className="footer-child1__elem2">
               <div>
                 <h1>COMPANY</h1>
-                <Links items={["About", "Jobs", "For the record"]} />
+                <Links items={companyLinks} />
               </div>
               <div>
                 <h1>COMMUNITIES</h1>
-                <ul>
-                  <li>
-                    <a href="#">For Artists</a>
-                  </li>
-                  <li>
-                    <a href="#">Developers</a>
-                  </li>
-                  <li>
-                    <a href="#">Advertising</a>
-                  </li>
-                  <li>
-                    <a href="#">Investors</a>
-                  </li>
-                  <li>
-                    <a href="#">Vendors</a>
-                  </li>
-                </ul>
+                <Links items={communityLinks} />
               </div>
               <div>
                 <h1>USFUL LINKS</h1>
-                <ul>
-                  <li>
-                    <a href="#">Support</a>
-                  </li>
-                  <li>
-                    <a href="#">Web Player</a>
-                  </li>
-                  <li>
-                    <a href="#">Free Mobil App</a>
-                  </li>
-                </ul>
+                <Links items={usfulLinks} />
               </div>
             </div>
           </div>
