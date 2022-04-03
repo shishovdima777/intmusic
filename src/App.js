@@ -3,7 +3,7 @@ import { logo } from "./assets/images";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-
+import { Links } from "./components";
 
 function App() {
   return (
@@ -54,17 +54,7 @@ function App() {
             <div className="footer-child1__elem2">
               <div>
                 <h1>COMPANY</h1>
-                <ul>
-                  <li>
-                    <a href="#">About</a>
-                  </li>
-                  <li>
-                    <a href="#">Jobs</a>
-                  </li>
-                  <li>
-                    <a href="#">For the record</a>
-                  </li>
-                </ul>
+                <Links items={["About", "Jobs", "For the record"]} />
               </div>
               <div>
                 <h1>COMMUNITIES</h1>
