@@ -3,11 +3,11 @@ import { logo } from "./assets/images";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import { Links } from "./components";
+import { Links, Burger } from "./components";
+import { useState } from "react";
 
 function App() {
   const companyLinks = [
-    { value: "About", href: "/about" },
     { value: "About", href: "/about" },
     { value: "Jobs", href: "/jobs" },
     { value: "For the record", href: "/fortherecord" },
@@ -24,28 +24,37 @@ function App() {
     { value: "Web Player", href: "/webplayer" },
     { value: "Free Mobil App", href: "/freemobilapp" },
   ];
+  const headerLinks = [
+    { value: "Support", href: "/support" },
+    { value: "Download", href: "/download" },
+  ];
+  const signInUpLinks = [
+    { value: "Sign up", href: "/signup" },
+    { value: "Log in", href: "/signin" },
+  ];
+  const [menuActive, setMenuActive] = useState(false);
 
   return (
     <div className="background-img">
+      <Burger link1={headerLinks} link2={signInUpLinks} menuActive={menuActive}/>
       <header>
         <div className="header-wrapper">
           <div className="header-child1">
             <img className="logo" src={logo} alt="intmusic logo" />
           </div>
           <nav className="header-child2">
+            <div className="burger-icon" onClick={() => setMenuActive(!menuActive)}>
+              <span className="hum-line"></span>
+              <span className="hum-line"></span>
+              <span className="hum-line"></span>
+            </div>
             <ul>
               <li>
-                <a href="#">Support</a>
-              </li>
-              <li>
-                <a href="#">Download</a>
+                <Links items={headerLinks} />
               </li>
               <li className="vertical-line"></li>
               <li>
-                <a href="#">Sign up</a>
-              </li>
-              <li>
-                <a href="#">Log in</a>
+                <Links items={signInUpLinks} />
               </li>
             </ul>
           </nav>
