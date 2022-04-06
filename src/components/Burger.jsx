@@ -1,9 +1,25 @@
 import { logo } from "../assets/images";
 import { Links } from "./index";
-function Burger({link1, link2, menuActive}) {
-    console.log(menuActive)
+import { useEffect, useRef } from "react";
+function Burger({ link1, link2, menuActive, setMenuActive, buttonRef }) {
+  const sortRef = useRef();
+  const toggleOutside = (e) => {
+    if (
+      !e.path.includes(sortRef.current) &&
+      !e.path.includes(buttonRef.current)
+    ) {
+      setMenuActive(false);
+      console.log("outside")
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener("click", toggleOutside);
+  }, []);
   return (
-    <div className={menuActive ? "burger-menu-active": "burger-menu"}>
+    <div
+      ref={sortRef}
+      className={menuActive ? "burger-menu burger-menu-active" : "burger-menu"}
+    >
       <div className="burger-menu-flex">
         <div>
           <img className="logo" src={logo} alt="intmusic logo" />

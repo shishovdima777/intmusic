@@ -1,7 +1,8 @@
-import Links from './Links';
-import Burger from './Burger';
+export {default as Links} from './Links';
+export {default as Burger} from './Burger';
 
-export {
-    Links,
-    Burger
-};
+
+
+
+
+

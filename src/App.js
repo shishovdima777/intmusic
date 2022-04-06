@@ -4,7 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import { Links, Burger } from "./components";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   const companyLinks = [
@@ -34,16 +34,28 @@ function App() {
   ];
   const [menuActive, setMenuActive] = useState(false);
 
+  const buttonRef = useRef();
+
   return (
     <div className="background-img">
-      <Burger link1={headerLinks} link2={signInUpLinks} menuActive={menuActive}/>
+      <Burger
+        link1={headerLinks}
+        link2={signInUpLinks}
+        menuActive={menuActive}
+        setMenuActive={setMenuActive}
+        buttonRef={buttonRef}
+      />
       <header>
         <div className="header-wrapper">
           <div className="header-child1">
             <img className="logo" src={logo} alt="intmusic logo" />
           </div>
           <nav className="header-child2">
-            <div className="burger-icon" onClick={() => setMenuActive(!menuActive)}>
+            <div
+              ref={buttonRef}
+              className="burger-icon"
+              onClick={() => setMenuActive(!menuActive)}
+            >
               <span className="hum-line"></span>
               <span className="hum-line"></span>
               <span className="hum-line"></span>
