@@ -1,0 +1,73 @@
+@import "variables";
+
+.login-wrapper {
+  .login-img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 27px;
+  }
+  .login-horizontal-line {
+    background-color: $gr4;
+    display: block;
+    height: 1px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  p {
+    @include font(14px, 700);
+    color: $black;
+    text-align: center;
+    margin-bottom: 11px;
+  }
+  .api-logins {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 450px;
+    .api-logins__elem1,
+    .api-logins__elem2,
+    .api-logins__elem3 {
+      align-items: center;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      height: 48px;
+      width: 100%;
+      margin-bottom: 11px;
+      .icon-size {
+        height: 17px;
+        width: 17px;
+        margin-right: 11px;
+      }
+      a {
+        @include font(12px, 700);
+        color: $white;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+    .api-logins__elem1 {
+      background-color: $bl2;
+    }
+    .api-logins__elem2 {
+      background-color: $black2;
+    }
+    .api-logins__elem3 {
+      border: 1px solid #6a6a6a;
+      a {
+        color: $gr5;
+      }
+    }
+    .login-or {
+    //   display: flex;
+      .login-horizontal-line-2 {
+        background-color: $gr4;
+        display: block;
+        height: 2px;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,9 +1,7 @@
 @import "variables";
 
 body {
-  background-color: $bl;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 h1,
 h2,
@@ -14,7 +12,9 @@ h5,
 p {
   margin: 0;
 }
+
 .background-img {
+  background-color: $bl;
   background-image: url(../assets/images/background1.png);
   background-size: cover;
   background-repeat: no-repeat;
