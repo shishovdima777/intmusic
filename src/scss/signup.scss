@@ -1,3 +1,172 @@
-body {
-    background-color: white;
+@import "variables";
+.signup-wrapper {
+  h1,
+  p {
+    margin: 0;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 46px;
+    margin-bottom: 41px;
+  }
+  h1 {
+    @include font(32px, 700);
+    color: $black;
+    text-align: center;
+    margin-bottom: 26px;
+  }
+  .api-signups {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 450px;
+    .api-signups__elem1,
+    .api-signups__elem2 {
+      @include font(12px, 700);
+      align-items: center;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      height: 48px;
+      width: 100%;
+      margin-bottom: 11px;
+      text-decoration: none;
+      .icon-size {
+        height: 17px;
+        width: 17px;
+        margin-right: 11px;
+      }
+    }
+    .api-signups__elem1 {
+      background-color: $bl2;
+      color: $white;
+    }
+    .api-signups__elem2 {
+      border: 1px solid $gr5;
+      color: $gr5;
+      height: 46px;
+      max-width: 448px;
+    }
+  }
+  .signup-or {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    max-width: 450px;
+    p {
+      color: $gr4;
+      margin: 0 13px;
+    }
+    .signup-horizontal-line {
+      background-color: $gr4;
+      height: 2px;
+      width: 100%;
+    }
+  }
+  .second-p {
+    @include font(18px, 700);
+    color: $black;
+    text-align: center;
+    margin-bottom: 23px;
+  }
+  .signup-form {
+    margin: 0 auto;
+    max-width: 450px;
+    label,
+    input {
+      display: block;
+      &::placeholder {
+        @include font(16px, 400);
+        color: $gr4;
+      }
+    }
+    label {
+      @include font(14px, 700);
+      margin-bottom: 7px;
+    }
+    input {
+      margin-bottom: 16px;
+    }
+    .name-input {
+      margin-bottom: 0;
+    }
+    p {
+      @include font(12px, 400);
+      margin-bottom: 19px;
+    }
+    .signup-birth-date {
+      display: flex;
+      justify-content: space-between;
+      label {
+        @include font(12px, 400);
+      }
+      .birth-date__elem1 {
+        max-width: 86px;
+      }
+      .birth-date__elem2 {
+        color: $gr4;
+        width: 190px;
+      }
+      .birth-date__elem3 {
+        max-width: 142px;
+      }
+    }
+    .gender-radio {
+      display: flex;
+      margin-bottom: 41px;
+      .gender-radio-elem1,
+      .gender-radio-elem2 {
+        display: flex;
+        align-items: baseline;
+        margin-right: 24px;
+        input {
+          margin-right: 13px;
+        }
+        label {
+          @include font(12px, 400);
+        }
+      }
+    }
+    .terms-checkboxes {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
+      .terms-checkboxes__elem1,
+      .terms-checkboxes__elem2 {
+        display: flex;
+        align-items: baseline;
+        input {
+          margin-right: 15px;
+        }
+        label {
+          @include font(12px, 400);
+        }
+        a {
+          color: $or;
+        }
+      }
+    }
+    .sign-up-button {
+      @include font(14px, 500);
+      border-radius: 500px;
+      border-style: none;
+      background-color: $or;
+      margin: 0 auto;
+      margin-bottom: 32px;
+      height: 48px;
+      width: 168px;
+    }
+  }
+  .login-link {
+    @include font(12px, 400);
+    color: $black;
+    text-align: center;
+    margin: 0 auto;
+    a {
+        color: $or;
+    }
+  }
 }

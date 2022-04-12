@@ -44,6 +44,7 @@ header {
     display: flex;
     padding: 0;
     @include font(16px, 400);
+    margin: 0;
     .vertical-line {
       width: 5px;
       border-left: 1px solid $white;
