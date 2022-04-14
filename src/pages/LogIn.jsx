@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
+import Checkbox from '@mui/material/Checkbox';
+import { orange } from '@mui/material/colors';
 
 function LogIn() {
   return (
@@ -38,7 +40,12 @@ function LogIn() {
         <p>Forgot your password?</p>
         <div className="login-remember-submit">
           <div>
-            <input type="checkbox" className="check-inline" />
+            < Checkbox defaultChecked sx={{
+              color: orange[800],
+              "&.Mui-checked": {
+                color: orange[800]
+              }
+            }} />
             <label htmlFor="#" className="remember-me">
               Remember me
             </label>
@@ -56,3 +63,6 @@ function LogIn() {
 }
 
 export default LogIn;
+
+
+{/* <input type="checkbox" className="check-inline" /> */}
