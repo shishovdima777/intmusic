@@ -1,0 +1,188 @@
+@import "variables";
+.profile-header-wrapper {
+  background-color: $gr6;
+  margin-bottom: 16px;
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    max-width: $p-full-width;
+    margin: 0 auto;
+    height: 80px;
+    .profile-header-child1 {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: 820px;
+      .profile-form {
+        display: flex;
+        .search-field {
+          height: 35px;
+          background-color: $gr7;
+          border-style: none;
+          border-radius: 4px 0 0 4px;
+          padding: 11px;
+          width: 393px;
+          outline: none;
+          &::placeholder {
+            @include font(12px, 400);
+            color: $gr9;
+          }
+        }
+        .search-btn {
+          height: 35px;
+          background-color: $gr7;
+          border-style: none;
+          border-radius: 0 4px 4px 0;
+          color: $gr8;
+        }
+      }
+      .upload-btn {
+        @include font(16px, 400);
+        background-color: $gr6;
+        border-style: none;
+        color: $gr10;
+        padding: 0;
+        outline: none;
+      }
+      a {
+        @include font(16px, 400);
+        color: $gr10;
+        text-decoration: none;
+      }
+    }
+    .profile-header-child2 {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      .profile-header-child2__elem1 {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 164px;
+        h1 {
+          margin: 0;
+          @include font(16px, 400);
+          color: $gr10;
+        }
+        .key-arrow {
+          color: $gr10;
+          transform: translateY(-2px);
+        }
+      }
+      .profile-header-child2__elem2 {
+        display: none;
+        .MoreHorizIcon {
+          color: $gr10;
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+    .profile-header-child3 {
+      display: none;
+      justify-content: center;
+      flex-direction: column;
+      .hum-line {
+        background-color: $gr10;
+        border-radius: 4px;
+        height: 3px;
+        margin-bottom: 4px;
+        width: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium-query) {
+  .profile-header-wrapper {
+    .profile-header {
+      display: flex;
+      justify-content: space-around;
+      max-width: 877px;
+      .profile-header-child1 {
+        justify-content: flex-start;
+        img {
+          margin-right: 45px;
+        }
+        .upload-btn,
+        a {
+          display: none;
+        }
+      }
+      .profile-header-child2 {
+        .profile-header-child2__elem1 {
+          margin-right: 23px;
+        }
+        .profile-header-child2__elem2 {
+          display: block;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 811px) {
+  .profile-header-wrapper {
+    height: 54px;
+    .profile-header {
+      height: 54px;
+      .profile-header-child1 {
+        .profile-form {
+          display: flex;
+          .search-field {
+            height: 25px;
+            width: 270px;
+            outline: none;
+            &::placeholder {
+              @include font(12px, 400);
+              color: $gr9;
+            }
+          }
+          .search-btn {
+            height: 25px;
+          }
+        }
+        img {
+          height: 28px;
+          width: 89px;
+          margin-right: 10px;
+        }
+      }
+      .profile-header-child2 {
+        display: none;
+        .profile-header-child2__elem1 {
+          margin-right: 23px;
+        }
+        .profile-header-child2__elem2 {
+          display: block;
+        }
+      }
+      .profile-header-child3 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .hum-line {
+          background-color: $gr10;
+          border-radius: 4px;
+          height: 3px;
+          margin-bottom: 4px;
+          width: 22px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $small-query) {
+  .profile-header-wrapper {
+    .profile-header {
+      max-width: 449px;
+      .profile-header-child1 {
+        .profile-form {
+          .search-field {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}

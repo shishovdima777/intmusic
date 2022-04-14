@@ -1,0 +1,147 @@
+@import "variables";
+.profile-wrapper {
+  background-color: $black;
+  height: 100vh;
+
+  .profile-continer {
+    border: 1px solid $gr11;
+    border-radius: 6px;
+    padding: 53px;
+    margin: 0 auto;
+    max-width: $p-full-width;
+    .profile-name-photo {
+      background-color: $gr6;
+      border-radius: 8px;
+      padding-top: 14px;
+      height: 400px;
+      max-width: 300px;
+      margin-bottom: 47px;
+      img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 41px;
+        background-size: cover;
+      }
+      h1 {
+        @include font(32px, 700);
+        margin: 0;
+        margin-left: 28px;
+        color: $white;
+      }
+    }
+    .profile-continer-header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .profile-header-elem1 {
+        ul {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          .vertical-line {
+            width: 5px;
+            border-left: 1px solid $white;
+            color: $gr10;
+            height: 16px;
+            margin-right: 32px;
+          }
+          li {
+            margin-right: 20px;
+            a {
+              @include font(24px, 400);
+              color: $gr10;
+            }
+          }
+        }
+      }
+      .CloudUploadIcon {
+        cursor: pointer;
+        color: $gr10;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+  .profile-small-width {
+    display: none;
+    margin: 0 auto;
+    max-width: 440px;
+    h1,
+    h2 {
+      @include font(20px, 800);
+      color: $white;
+      margin: 0;
+      margin-bottom: 18px;
+    }
+    .album-name-img {
+      background-color: $gr6;
+      height: 140px;
+      width: 114px;
+      border-radius: 8px;
+      padding-top: 7px;
+      margin-bottom: 23px;
+      img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 8px;
+      }
+      h1 {
+        @include font(12px, 800);
+        color: $white;
+        margin: 0;
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium-query) {
+  .profile-wrapper {
+    .profile-continer {
+      .profile-continer-header {
+        .profile-header-elem1 {
+          ul {
+            li {
+              a {
+                @include font(16px, 400);
+                color: $gr10;
+              }
+            }
+          }
+        }
+        .CloudUploadIcon {
+          cursor: pointer;
+          color: $gr10;
+          height: 35px;
+          width: 35px;
+        }
+      }
+    }
+
+    .profile-continer {
+      max-width: 907px;
+    }
+  }
+}
+
+@media (max-width: 811px) {
+  .profile-wrapper {
+    .profile-continer {
+      max-width: 907px;
+    }
+  }
+}
+
+@media (max-width: $small-query) {
+  .profile-wrapper {
+    .profile-continer {
+      display: none;
+    }
+    .profile-small-width {
+      display: block;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, SignUp, LogIn, ProfileExplore } from "./pages";
+import { Home, SignUp, LogIn, Profile, Explore } from "./pages";
 
 
 function App() {
@@ -9,7 +9,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/profilexplore" element={<ProfileExplore />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/explore" element={<Explore />} />
       </Routes>
     </div>
   );
