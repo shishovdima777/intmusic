@@ -2,13 +2,31 @@
 .profile-wrapper {
   background-color: $black;
   height: 100vh;
-
+  .popup-3 {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right:5px;
+    z-index: 1;
+  }
   .profile-continer {
+    position: relative;
     border: 1px solid $gr11;
     border-radius: 6px;
     padding: 53px;
     margin: 0 auto;
     max-width: $p-full-width;
+    .popup-1 {
+      position: absolute;
+      top: -35px;
+      right: 1px;
+    }
+    .popup-2 {
+      display: none;
+      position: absolute;
+      top: -35px;
+      right: 1px;
+    }
     .profile-name-photo {
       background-color: $gr6;
       border-radius: 8px;
@@ -88,7 +106,7 @@
         margin: 0 auto;
         margin-bottom: 8px;
       }
-      h1 {
+      h2 {
         @include font(12px, 800);
         color: $white;
         margin: 0;
@@ -101,6 +119,12 @@
 @media (max-width: $medium-query) {
   .profile-wrapper {
     .profile-continer {
+      .popup-1 {
+        right: 82px;
+      }
+      .popup-2 {
+        display: block;
+      }
       .profile-continer-header {
         .profile-header-elem1 {
           ul {
@@ -129,8 +153,17 @@
 
 @media (max-width: 811px) {
   .profile-wrapper {
+    .popup-3 {
+      display: block;
+    }
     .profile-continer {
       max-width: 907px;
+      .popup-1 {
+        display: none;
+      }
+      .popup-2 {
+        display: none;
+      }
     }
   }
 }

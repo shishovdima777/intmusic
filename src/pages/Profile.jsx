@@ -1,15 +1,49 @@
-import React from "react";
-import MainHeader from "./MainHeader";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useEffect, useState } from "react";
+import { MainHeader, AlbumSwiper, PopUp } from "../components";
 import { profileimg2, rectangle } from "../assets/images";
 import "../scss/profile.scss";
 import "swiper/css";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 function ProfileExplore() {
+  const [visiblePopUpFirst, setVisiblePopUpFirst] = useState(false);
+  const [visiblePopUpSecond, setVisiblePopUpSecond] = useState(false);
+  const [visiblePopUpThird, setVisiblePopUpThird] = useState(false);
+  const albumSlider = [
+    { img: rectangle, album: "Lucid Dreams" },
+    { img: rectangle, album: "Death race for love" },
+    { img: rectangle, album: "Lucid Dreams" },
+    { img: rectangle, album: "Lucid Dreams" },
+    { img: rectangle, album: "Lucid Dreams" },
+  ];
+  const popUpLinks = [
+    { href: "#", value: "Change Profile Photo" },
+    { href: "#", value: "Change Profile Name" },
+    { href: "#", value: "Log out" },
+  ];
+  const popUpLinksTwo = [
+    { href: "#", value: "Upload Music" },
+    { href: "#", value: "Explore Music" },
+  ];
+  const popUpLinksThree = [
+    { href: "#", value: "Change Profile Photo" },
+    { href: "#", value: "Change Profile Name" },
+    { href: "#", value: "Upload Music" },
+    { href: "#", value: "Explore Music" },
+    { href: "#", value: "Log out" },
+  ];
+
   return (
     <div className="profile-wrapper">
-      <MainHeader />
+      <MainHeader
+        setVisiblePopUpFirst={setVisiblePopUpFirst}
+        visiblePopUpFirst={visiblePopUpFirst}
+        visiblePopUpSecond={visiblePopUpSecond}
+        setVisiblePopUpSecond={setVisiblePopUpSecond}
+        visiblePopUpThird={visiblePopUpThird}
+        setVisiblePopUpThird={setVisiblePopUpThird}
+
+      />
       <div className="profile-continer">
         <div className="profile-name-photo">
           <img src={profileimg2} alt="profile image" />
@@ -35,54 +69,27 @@ function ProfileExplore() {
             <CloudUploadIcon className="CloudUploadIcon" />
           </div>
         </div>
+        {visiblePopUpFirst && (
+          <div className="popup-1">
+            <PopUp items={popUpLinks} />
+          </div>
+        )}
+        {visiblePopUpSecond && (
+          <div className="popup-2">
+            <PopUp items={popUpLinksTwo} />
+          </div>
+        )}
       </div>
       <div className="profile-small-width">
         <h1>Albums</h1>
-        <Swiper
-          spaceBetween={115}
-          slidesPerView={4}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <SwiperSlide>
-            <div className="album-name-img">
-              <img src={rectangle} alt="pic of album" />
-              <h1>Lucid Dreams</h1>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="album-name-img">
-              <img src={rectangle} alt="pic of album" />
-              <h1>Lucid Dreams</h1>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="album-name-img">
-              <img src={rectangle} alt="pic of album" />
-              <h1>Lucid Dreams</h1>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="album-name-img">
-              <img src={rectangle} alt="pic of album" />
-              <h1>Lucid Dreams</h1>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="album-name-img">
-              <img src={rectangle} alt="pic of album" />
-              <h1>Lucid Dreams</h1>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="album-name-img">
-              <img src={rectangle} alt="pic of album" />
-              <h1>Lucid Dreams</h1>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+        <AlbumSwiper items={albumSlider} />
         <h2>My music</h2>
       </div>
+      {visiblePopUpThird && (
+        <div className="popup-3">
+          <PopUp items={popUpLinksThree} />
+        </div>
+      )}
     </div>
   );
 }

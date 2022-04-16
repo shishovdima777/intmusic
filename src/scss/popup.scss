@@ -1,0 +1,40 @@
+@import "variables";
+.popup-wrapper {
+  background-color: $gr6;
+  border: 1px solid $gr10;
+  border-radius: 6px;
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.95);
+  padding: 10px;
+  max-width: 168px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    li {
+        margin-bottom: 11px;
+        width: 163px;
+        a {
+            @include font(12px, 400);
+            color: $white;
+            text-decoration: none;
+            &:hover {
+              color: $gr10;
+            }
+        }
+    }
+  }
+}
+// @media (max-width: $medium-query) {
+//   .popup-wrapper {
+//     right: 82px;
+//   }
+// }
+// @media (max-width: 811px) {
+//   .popup-wrapper {
+//     display: none;
+//   }
+// }
