@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { MainHeader, AlbumSwiper, PopUp } from "../components";
 import { profileimg2, rectangle } from "../assets/images";
 import "../scss/profile.scss";
@@ -6,6 +6,9 @@ import "swiper/css";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 function ProfileExplore() {
+  const popUpRef = useRef();
+  const headerBurger = useRef();
+
   const [visiblePopUpFirst, setVisiblePopUpFirst] = useState(false);
   const [visiblePopUpSecond, setVisiblePopUpSecond] = useState(false);
   const [visiblePopUpThird, setVisiblePopUpThird] = useState(false);
@@ -33,16 +36,28 @@ function ProfileExplore() {
     { href: "#", value: "Log out" },
   ];
 
+  const profileOutsideClick = (e) => {
+    if (
+      !e.path.includes(popUpRef.current) &&
+      !e.path.includes(headerBurger.current)
+    ) {
+      setVisiblePopUpThird(false);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("click", profileOutsideClick);
+  }, []);
   return (
     <div className="profile-wrapper">
       <MainHeader
+        headerBurger={headerBurger}
         setVisiblePopUpFirst={setVisiblePopUpFirst}
         visiblePopUpFirst={visiblePopUpFirst}
         visiblePopUpSecond={visiblePopUpSecond}
         setVisiblePopUpSecond={setVisiblePopUpSecond}
         visiblePopUpThird={visiblePopUpThird}
         setVisiblePopUpThird={setVisiblePopUpThird}
-
       />
       <div className="profile-continer">
         <div className="profile-name-photo">
@@ -86,7 +101,7 @@ function ProfileExplore() {
         <h2>My music</h2>
       </div>
       {visiblePopUpThird && (
-        <div className="popup-3">
+        <div ref={popUpRef} className="popup-3">
           <PopUp items={popUpLinksThree} />
         </div>
       )}
