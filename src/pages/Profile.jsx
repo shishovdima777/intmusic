@@ -4,6 +4,7 @@ import { profileimg2, rectangle } from "../assets/images";
 import "../scss/profile.scss";
 import "swiper/css";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+// import { Link } from "react-router-dom";
 
 function ProfileExplore() {
   const popUpRef = useRef();
@@ -24,18 +25,18 @@ function ProfileExplore() {
   const popUpLinks = [
     { href: "#", value: "Change Profile Photo" },
     { href: "#", value: "Change Profile Name" },
-    { href: "#", value: "Log out" },
+    { href: "/login", value: "Log out" },
   ];
   const popUpLinksTwo = [
     { href: "#", value: "Upload Music" },
-    { href: "#", value: "Explore Music" },
+    { href: "/explore", value: "Explore Music" },
   ];
   const popUpLinksThree = [
     { href: "#", value: "Change Profile Photo" },
     { href: "#", value: "Change Profile Name" },
     { href: "#", value: "Upload Music" },
-    { href: "#", value: "Explore Music" },
-    { href: "#", value: "Log out" },
+    { href: "/explore", value: "Explore Music" },
+    { href: "/login", value: "Log out" },
   ];
 
   const profileOutsideClick = (e) => {
@@ -44,7 +45,7 @@ function ProfileExplore() {
       !e.path.includes(headerBurger.current)
     ) {
       setVisiblePopUpThird(false);
-    } 
+    }
   };
   const profileOutsideClickTwo = (e) => {
     if (!e.path.includes(headerProfile.current)) {
@@ -55,7 +56,7 @@ function ProfileExplore() {
     if (!e.path.includes(dotsPopUp.current)) {
       setVisiblePopUpSecond(false);
     }
-  }
+  };
   console.log(visiblePopUpThird);
   useEffect(() => {
     document.body.addEventListener("click", profileOutsideClick);
@@ -67,7 +68,7 @@ function ProfileExplore() {
       <MainHeader
         headerBurger={headerBurger}
         headerProfile={headerProfile}
-        dotsPopUp= {dotsPopUp}
+        dotsPopUp={dotsPopUp}
         setVisiblePopUpFirst={setVisiblePopUpFirst}
         visiblePopUpFirst={visiblePopUpFirst}
         visiblePopUpSecond={visiblePopUpSecond}

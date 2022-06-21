@@ -1,5 +1,6 @@
 import React from "react";
 import "../scss/popup.scss";
+import { Link } from "react-router-dom";
 
 function PopUp({ items}) {
   return (
@@ -7,7 +8,7 @@ function PopUp({ items}) {
       <ul>
         {items.map((link, index) => (
           <li key={`${link}_${index}`}>
-            <a href={link.href}>{link.value}</a>
+            <Link to={link.href}>{link.value}</Link>
           </li>
         ))}
       </ul>

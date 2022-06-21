@@ -38,6 +38,7 @@ function Explore() {
     { img: useravatar2, user: "Juice WRLD" },
   ];
 
+
   return (
     <div className="explore-wrapper">
       <MainHeader />
