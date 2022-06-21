@@ -9,7 +9,6 @@ function Burger({ link1, link2, menuActive, setMenuActive, buttonRef }) {
       !e.path.includes(buttonRef.current)
     ) {
       setMenuActive(false);
-      console.log("outside")
     }
   };
   useEffect(() => {

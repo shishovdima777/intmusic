@@ -13,6 +13,8 @@ function MainHeader({
   visiblePopUpThird,
   setVisiblePopUpThird,
   headerBurger,
+  headerProfile,
+  dotsPopUp,
 }) {
   return (
     <header className="profile-header-wrapper">
@@ -30,6 +32,7 @@ function MainHeader({
         </div>
         <div className="profile-header-child2">
           <div
+            ref={headerProfile}
             onClick={() => setVisiblePopUpFirst(!visiblePopUpFirst)}
             className="profile-header-child2__elem1"
           >
@@ -44,6 +47,7 @@ function MainHeader({
             </div>
           </div>
           <div
+            ref={dotsPopUp}
             onClick={() => setVisiblePopUpSecond(!visiblePopUpSecond)}
             className="profile-header-child2__elem2"
           >

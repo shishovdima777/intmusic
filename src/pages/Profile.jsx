@@ -8,6 +8,8 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 function ProfileExplore() {
   const popUpRef = useRef();
   const headerBurger = useRef();
+  const headerProfile = useRef();
+  const dotsPopUp = useRef();
 
   const [visiblePopUpFirst, setVisiblePopUpFirst] = useState(false);
   const [visiblePopUpSecond, setVisiblePopUpSecond] = useState(false);
@@ -42,16 +44,30 @@ function ProfileExplore() {
       !e.path.includes(headerBurger.current)
     ) {
       setVisiblePopUpThird(false);
+    } 
+  };
+  const profileOutsideClickTwo = (e) => {
+    if (!e.path.includes(headerProfile.current)) {
+      setVisiblePopUpFirst(false);
     }
   };
-
+  const profileOutsideClickThree = (e) => {
+    if (!e.path.includes(dotsPopUp.current)) {
+      setVisiblePopUpSecond(false);
+    }
+  }
+  console.log(visiblePopUpThird);
   useEffect(() => {
     document.body.addEventListener("click", profileOutsideClick);
+    document.body.addEventListener("click", profileOutsideClickTwo);
+    document.body.addEventListener("click", profileOutsideClickThree);
   }, []);
   return (
     <div className="profile-wrapper">
       <MainHeader
         headerBurger={headerBurger}
+        headerProfile={headerProfile}
+        dotsPopUp= {dotsPopUp}
         setVisiblePopUpFirst={setVisiblePopUpFirst}
         visiblePopUpFirst={visiblePopUpFirst}
         visiblePopUpSecond={visiblePopUpSecond}

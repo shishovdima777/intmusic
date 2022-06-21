@@ -2,7 +2,6 @@ import React from "react";
 import "../scss/popup.scss";
 
 function PopUp({ items}) {
-  console.log(`hello`);
   return (
     <div className="popup-wrapper">
       <ul>
